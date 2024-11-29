@@ -122,5 +122,41 @@ a{
 a:hover{
     text-decoration: underline;
 }
+.btn-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff; 
+    color: white; 
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cart:hover {
+    background-color: #0056b3; 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+}
+
+.btn-cart:focus {
+    outline: none; 
+    box-shadow: 0 0 0 4px rgba(38, 143, 255, 0.5); 
+}
+
+.cart-icon {
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+a{
+    color: white;
+}
 
 

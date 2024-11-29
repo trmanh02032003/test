@@ -9,17 +9,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="trangchu.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
     <header><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3x-avGyroQcum7wnolqmuZmO6aO4YZjIkoQ&s" alt=""></header>
     <div class="banner">
         <img src="Screenshot 2024-11-26 175229.png" alt="">
     </div>
-    <nav>
-        <a href="Home.php">Trang chủ</a>
-        <a href="Product.php">Sản phẩm</a>
-        <a href="Cart.php">Giỏ hàng</a>
-    </nav>
+    <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Trang chu</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="qlSanpham.php">San pham</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="Giohang.php">Gio hang</a>
+  </li>
+</ul>
     <div class="container">
         <?php
             $sql_query = "select * from products";
@@ -32,6 +39,11 @@
                         <h3>".htmlspecialchars($rows['ProductName'])."</h3>
                         <p>".htmlspecialchars($rows['Size'])."<span></span>".htmlspecialchars($rows['Color'])."</p>
                         <h2>".htmlspecialchars($rows['Price'])."</h2>
+                        <form method='POST' action='Giohang.php'>
+                        <input type='hidden' name='cart_id' value='" . htmlspecialchars($rows['ProductID']) . "'>
+                        <button type='submit' name='giohang' class='btn-cart'>Thêm vào giỏ hàng
+                            </button>
+                        </form>
                     </div>";
                 }
             }
